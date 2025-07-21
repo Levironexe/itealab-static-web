@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #1a1b1a;
   --foreground: #171717;
 }
 
@@ -10,11 +10,18 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-ubuntu: var(--font-ubuntu);
+  --font-michroma: var(--font-michroma);
+  --color-background-secondary: #36393e;
+  --color-dark-green: #004243;
+  --color-darkest-green: #0D1F21;
+  --color-light-green: #74A173;
+  --color-background-light: #FAF6E9;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1a1b1a;
     --foreground: #ededed;
   }
 }
@@ -22,5 +29,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:  var(--font-ubuntu), Arial, sans-serif;
 }
