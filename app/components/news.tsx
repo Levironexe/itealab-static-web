@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Newspaper } from "lucide-react";
 import Link from "next/link";
 import { Icon } from "./ui/plus-icon";
+import { motion } from "framer-motion"; // Add this import
+
 const News = () => {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -31,54 +33,77 @@ const News = () => {
   return (
     <div
       id="news"
-      className="bg-background text-background-light px-4 sm:px-6 md:px-10 py-20 relative"
+      className="bg-background text-background-light px-6 sm:px-8 md:px-10 lg:px-12 py-12 sm:py-16 md:py-20 relative"
     >
       <div className="max-w-7xl mx-auto z-10 relative">
-        {/* Header Section */}
-        <div className="text-center mb-16">
-          <h1 className="font-michroma mb-4 text-4xl font-bold ">ITEA LAB NEWS</h1>
-          <p className="text-lg">
+        {/* Header Section with animation */}
+        <motion.div 
+          className="text-center mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          <h1 className="font-michroma mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">
+            ITEA LAB NEWS
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             Stay updated with the latest happenings at our community.
           </p>
-        </div>
+        </motion.div>
 
         {/* News Cards Grid */}
-        <div
-          className={`grid md:grid-cols-2 gap-12 max-w-7xl mx-auto transition-opacity duration-700 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-6xl mx-auto">
           {items.map((item, index) => {
             const ItemIcon = item.icon;
 
             return (
-              <Link href={item.url} className="group">
-                <div
-                  key={index}
-                  className="mb-4 relative bg-background-light shadow-sm border border-dark-green"
-                  style={{ transitionDelay: `${index * 100}ms` }}
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ 
+                  duration: 0.6, 
+                  ease: "easeOut", 
+                  delay: index * 0.2 // Stagger animation
+                }}
+              >
+                <Link 
+                  href={item.url} 
+                  className="group block"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {/* Corner Icons */}
-                  <Icon className="absolute h-6 w-6 -top-3 -left-3 text-background-light z-10" />
-                  <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-background-light z-10" />
-                  <Icon className="absolute h-6 w-6 -top-3 -right-3 text-background-light z-10" />
-                  <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-background-light z-10" />
+                  <article className="mb-4 sm:mb-6 relative bg-background-light shadow-sm border border-dark-green overflow-hidden">
+                    {/* Corner Icons */}
+                    <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 text-background-light z-10" />
+                    <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 text-background-light z-10" />
+                    <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 text-background-light z-10" />
+                    <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 text-background-light z-10" />
 
-                  {/* News Image */}
-                  <div className="relative h-60 w-full overflow-hidden group">
-                    <img
-                      src={item.image || "/placeholder.svg"}
-                      alt={item.alt}
-                      className="w-full h-full object-cover"
-                    />
+                    {/* News Image */}
+                    <div className="relative h-48 sm:h-56 md:h-60 lg:h-64 w-full overflow-hidden">
+                      <img
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.alt}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                    </div>
+                  </article>
+
+                  {/* News Content */}
+                  <div className="px-2 sm:px-4">
+                    <h3 className="text-lg sm:text-xl md:text-2xl lg:text-[28px] font-bold text-background-light group-hover:text-light-green duration-300 transition-colors ease-in-out mb-2 sm:mb-3 leading-tight">
+                      {item.title}
+                    </h3>
+                    <p className="font-michroma text-sm sm:text-base text-gray-300">
+                      {item.date}
+                    </p>
                   </div>
-                </div>
-                {/* News Content */}
-                  <h3 className="text-[28px] font-bold text-background-light group-hover:text-light-green duration-400 transition-colors ease-in-out mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="font-michroma">{item.date}</p>
-              </Link>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

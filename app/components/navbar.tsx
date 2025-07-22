@@ -82,7 +82,7 @@ export function Navbar() {
     },
   ];
   return (
-    <div className="fixed z-50 bottom-0 flex items-center justify-center h-auto w-full py-4">
+    <div className="fixed z-50 bottom-0 flex items-center justify-start h-auto w-full p-4">
       <FloatingDock
         items={links}
       />

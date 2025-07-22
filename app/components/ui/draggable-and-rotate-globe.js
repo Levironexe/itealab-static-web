@@ -64,7 +64,7 @@ export function Cobe() {
     }
   }, [])
   return <div style={{
-    width: '100%',
+    width: '90%',
     maxWidth: 600,
     aspectRatio: 1,
     margin: 'auto',

@@ -34,17 +34,17 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const opacityTransform = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="w-full md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10 ">
+    <div className="w-full" ref={containerRef}>
+      <div className="max-w-7xl mx-auto pt-20">
         <div className="relative border-1 border-white/10 w-3/4">
           <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
           <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
           <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
           <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
-          <h2 className="font-michroma text-lg md:text-4xl bg-gradient-to-r from-dark-green to-light-green pl-4 py-1 font-bold">
+          <h2 className="font-michroma text-lg md:text-3xl bg-gradient-to-r from-dark-green to-light-green pl-4 py-1 font-bold">
             Our JOURNEY
           </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base p-4">
+          <p className="text-neutral-700 dark:text-background-light text-sm sm:text-base md:text-lg p-4">
             From humble beginnings to a thriving community, explore our journey
             through the years.
           </p>

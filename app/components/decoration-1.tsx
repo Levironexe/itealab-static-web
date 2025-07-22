@@ -14,10 +14,24 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
   // Create many more instances to ensure seamless loop
   const textInstances = Array(20).fill(text)
 
+  // Responsive font sizes
+  const responsiveFontSize = {
+    base: Math.max(fontSize * 0.4, 20), // Mobile: 40% of desktop, min 20px
+    sm: Math.max(fontSize * 0.5, 24),   // Small: 50% of desktop, min 24px
+    md: Math.max(fontSize * 0.6, 28),   // Medium: 60% of desktop, min 28px
+    lg: Math.max(fontSize * 0.8, 32),   // Large: 80% of desktop, min 32px
+    xl: fontSize,                       // XL and above: full size
+  }
+
   return (
     <section className="w-full overflow-hidden">
       {/* Left to Right */}
-      <div className="w-full overflow-hidden relative" style={{ height: `${fontSize * 1.2}px` }}>
+      <div 
+        className="w-full overflow-hidden relative" 
+        style={{ 
+          height: `${responsiveFontSize.base * 1.2}px`,
+        }}
+      >
         <div
           className="flex absolute whitespace-nowrap"
           style={{
@@ -30,8 +44,8 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
               key={`row1-${index}`}
               className="font-bold text-dark-green flex-shrink-0 font-michroma"
               style={{
-                fontSize: `${fontSize}px`,
-                marginRight: `${gap}px`,
+                fontSize: `${responsiveFontSize.base}px`,
+                marginRight: `${Math.max(gap * 0.4, 4)}px`,
                 lineHeight: "1.2",
                 display: "inline-block",
               }}
@@ -45,8 +59,8 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
               key={`row1-duplicate-${index}`}
               className="font-bold text-dark-green flex-shrink-0 font-michroma"
               style={{
-                fontSize: `${fontSize}px`,
-                marginRight: `${gap}px`,
+                fontSize: `${responsiveFontSize.base}px`,
+                marginRight: `${Math.max(gap * 0.4, 4)}px`,
                 lineHeight: "1.2",
                 display: "inline-block",
               }}
@@ -57,6 +71,7 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
         </div>
       </div>
 
+      {/* Responsive styles for different breakpoints */}
       <style jsx>{`
         @keyframes slideLeft {
           0% {
@@ -66,6 +81,46 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
             transform: translateX(-50%);
           }
         }
+
+        @media (min-width: 640px) {
+          .w-full.overflow-hidden.relative {
+            height: ${responsiveFontSize.sm * 1.2}px !important;
+          }
+          .font-bold.text-dark-green.flex-shrink-0.font-michroma {
+            font-size: ${responsiveFontSize.sm}px !important;
+            margin-right: ${Math.max(gap * 0.5, 6)}px !important;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .w-full.overflow-hidden.relative {
+            height: ${responsiveFontSize.md * 1.2}px !important;
+          }
+          .font-bold.text-dark-green.flex-shrink-0.font-michroma {
+            font-size: ${responsiveFontSize.md}px !important;
+            margin-right: ${Math.max(gap * 0.6, 8)}px !important;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .w-full.overflow-hidden.relative {
+            height: ${responsiveFontSize.lg * 1.2}px !important;
+          }
+          .font-bold.text-dark-green.flex-shrink-0.font-michroma {
+            font-size: ${responsiveFontSize.lg}px !important;
+            margin-right: ${Math.max(gap * 0.8, 12)}px !important;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .w-full.overflow-hidden.relative {
+            height: ${fontSize * 1.2}px !important;
+          }
+          .font-bold.text-dark-green.flex-shrink-0.font-michroma {
+            font-size: ${fontSize}px !important;
+            margin-right: ${gap}px !important;
+          }
+        }
       `}</style>
     </section>
   )
@@ -73,7 +128,7 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
 
 export default function IteaLabSlider() {
   return (
-    <main className="w-full mx-auto bg-light-green">
+    <main className="w-full mx-auto bg-light-green py-2 sm:py-3 md:py-4">
       <TextSlider
         text="ITEA LAB"
         fontSize={40}
