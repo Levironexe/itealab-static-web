@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useUserLocation } from "./hooks/useUserLocation";
 import { useCurrentTime } from "./hooks/useCurrentTime";
 import { useScreenResolution } from "./hooks/useScreenResolution";
+import { useLanguage } from "../contexts/LanguageContext";
 const KEYWORDS = [
   "React",
   "Next.js",
@@ -141,6 +142,7 @@ export default function Hero() {
   const currentTime = useCurrentTime();
   const { resolution } = useScreenResolution();
   const { city, country, loading } = useUserLocation();
+  const { t } = useLanguage();
 
   useEffect(() => {
     const updateDimensions = () => {
@@ -165,13 +167,13 @@ export default function Hero() {
   return (
     <div className="relative h-screen pb-12 sm:pb-16 md:pb-24 w-full flex items-center justify-center overflow-hidden px-4 sm:px-6 md:px-8 text-background-light">
       <div className="pointer-events-none absolute bottom-0 left-0 w-full h-20 z-20 bg-gradient-to-b from-transparent to-background" />
-      <div className="absolute top-0 left-0 p-4 font-michroma text-[12px] z-50 opacity-50" suppressHydrationWarning>
+      <div className="absolute top-0 left-0 p-4 font-michroma text-[12px] z-30 opacity-50" suppressHydrationWarning>
         {currentTime.toLocaleTimeString()}
       </div>
-      <div className="absolute top-0 right-0 p-4 font-michroma text-[12px] z-50 opacity-50">
+      <div className="absolute top-0 right-0 p-4 font-michroma text-[12px] z-30 opacity-50">
         {city}, {country}
       </div>
-      <div className="absolute bottom-0 right-0 p-4 font-michroma text-[12px] z-50 opacity-50">
+      <div className="absolute bottom-0 right-0 p-4 font-michroma text-[12px] z-30 opacity-50">
         {resolution}
       </div>
 
@@ -205,7 +207,7 @@ export default function Hero() {
 
         {/* Welcome text */}
         <p className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-transparent bg-gradient-to-r from-dark-green via-light-green to-light-green bg-clip-text font-bold z-20 mb-4 sm:mb-6 md:mb-8">
-          Welcome to
+          {t('welcome_title').split(' ').slice(0, 2).join(' ')}
         </p>
 
         {/* ITea Lab heading with icons */}

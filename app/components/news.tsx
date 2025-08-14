@@ -4,9 +4,11 @@ import { useState, useEffect } from "react";
 import { ArrowRight, Newspaper } from "lucide-react";
 import Link from "next/link";
 import { Icon } from "./ui/plus-icon";
-import { motion } from "framer-motion"; // Add this import
+import { motion } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const News = () => {
+  const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
 
   const items = [
@@ -14,8 +16,7 @@ const News = () => {
       icon: Newspaper,
       image: "/images/news1.jpg",
       date: "April 23, 2025",
-      title:
-        "ITea Lab Talents Build Chongluadao.vn AI Tool, Gain National Recognition",
+      title: t('news_title_1'),
       url: "https://www.facebook.com/ITeaLabTeam",
       alt: "Talent members achievement",
     },
@@ -23,8 +24,7 @@ const News = () => {
       icon: Newspaper,
       image: "/images/news2.jpg",
       date: "April 19, 2025",
-      title:
-        "ITea Lab Partners with 3DIoT for IoT and Software Development Collaboration",
+      title: t('news_title_2'),
       alt: "Partnership announcement",
       url: "https://www.facebook.com/ITeaLabTeam",
     },
@@ -45,10 +45,10 @@ const News = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h1 className="font-michroma mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">
-            ITEA LAB NEWS
+            {t('itea_lab_news')}
           </h1>
           <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            Stay updated with the latest happenings at our community.
+            {t('news_subtitle')}
           </p>
         </motion.div>
 

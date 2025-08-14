@@ -1,25 +1,29 @@
+"use client"
 import React from "react";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Icon } from "./ui/plus-icon";
 import ImageSlider from "./ui/image-slider";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Community = () => {
+  const { t } = useLanguage();
+  
   const workshops = [
     {
-      name: "Git & GitHub Workshop",
+      name: t('git_github_workshop'),
       url: "https://twitter.com/mannupaaji",
       image: "/images/git_github_workshop.png",
       alt: "Git GitHub Workshop",
     },
     {
-      name: "Amazon Q Workshop",
+      name: t('amazon_q_workshop'),
       url: "https://twitter.com/mannupaaji",
       image: "/images/amazon_q_workshop.jpg",
       alt: "Amazon Q Workshop",
     },
     {
-      name: "Docker Workshop",
+      name: t('docker_workshop'),
       url: "https://twitter.com/mannupaaji",
       image: "/images/docker_workshop.png",
       alt: "Docker Workshop",
@@ -48,14 +52,10 @@ const Community = () => {
             {/* Header and Description */}
             <div className="text-center lg:text-left lg:flex-1 mb-8 lg:mb-0">
               <h1 className="font-michroma mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-dark-green to-light-green bg-clip-text">
-                WHAT WE DO
+                {t('what_we_do_title')}
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto lg:mx-0">
-                We bring tech to life through hands-on workshops, meaningful
-                community projects, and fun team activities that build real
-                connections. It's not just about coding—it's about creating
-                together, solving problems that matter, and having a blast while
-                we do it.
+                {t('what_we_do_desc')}
               </p>
             </div>
 
@@ -68,7 +68,7 @@ const Community = () => {
           {/* Workshops Section */}
           <div className="flex flex-col space-y-6 sm:space-y-8">
             <h2 className="font-michroma text-2xl sm:text-3xl md:text-4xl font-bold text-background text-center lg:text-left">
-              Workshops
+              {t('workshops')}
             </h2>
 
             {/* Workshop Links */}

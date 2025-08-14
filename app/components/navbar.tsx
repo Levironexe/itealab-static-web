@@ -1,6 +1,8 @@
 'use client';
 import React from "react";
 import { FloatingDock } from "./ui/floating-dock";
+import SimpleLanguageSwitcher from "./simple-language-switcher";
+import { useLanguage } from "../contexts/LanguageContext";
 import {
   IconBrandGithub,
   IconBrandX,
@@ -14,9 +16,11 @@ import {
 } from "@tabler/icons-react";
 
 export function Navbar() { 
+  const { t } = useLanguage();
+  
   const links = [
     {
-      title: "Home",
+      title: t('home'),
       icon: (
         <img
           src="/images/icon_transparent.png"
@@ -29,7 +33,7 @@ export function Navbar() {
     },
 
     {
-      title: "About",
+      title: t('about'),
       icon: (
         <IconItalic className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -38,7 +42,7 @@ export function Navbar() {
 
     },
     {
-      title: "Our Community",
+      title: t('what_we_do'),
       icon: (
         <IconNetwork className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -47,7 +51,7 @@ export function Navbar() {
       target: "_self",
     },
     {
-      title: "news",
+      title: t('news'),
       icon: (
         <IconNews className="h-full w-full text-neutral-500 dark:text-neutral-300" />
       ),
@@ -82,10 +86,15 @@ export function Navbar() {
     },
   ];
   return (
-    <div className="fixed z-50 bottom-0 flex items-center justify-start h-auto w-full p-4">
+     <div className="fixed z-40 bottom-0 flex items-end justify-start h-auto w-full p-4 gap-4">
       <FloatingDock
         items={links}
       />
+      <div className="hidden md:flex h-16 items-end pb-3">
+        <div className="flex items-center justify-center">
+          <SimpleLanguageSwitcher />
+        </div>
+      </div>
     </div>
   );
 }

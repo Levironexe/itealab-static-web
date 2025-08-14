@@ -3,19 +3,21 @@ import React from "react";
 import { Timeline } from "./ui/timeline";
 import { Icon } from "./ui/plus-icon";
 import { motion } from "framer-motion";
+import { useLanguage } from "../contexts/LanguageContext";
 
 export function About() {
+  const { t } = useLanguage();
+  
   const data = [
     {
       title: "2023",
       content: (
         <div>
           <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold">
-            Conception
+            {t('conception')}
           </p>
           <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
-            The idea of an association for CS students suggested by Ms.Pascale
-            Quester
+            {t('conception_desc')}
           </p>
           <div className="grid grid-cols-1 gap-4">
             <img
@@ -30,15 +32,14 @@ export function About() {
       ),
     },
     {
-      title: "Early 2024",
+      title: t('early_2024'),
       content: (
         <div>
           <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
-            IT Student Association
+            {t('it_student_association')}
           </p>
           <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
-            Formed and recruited Gen 1 in Feb 2024, focusing on doing projects.
-            Represented Swinburne Vietnam CS at ACS accreditation
+            {t('it_student_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
@@ -78,11 +79,10 @@ export function About() {
       content: (
         <div>
           <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
-            Swinburne IT Lab
+            {t('swinburne_it_lab')}
           </p>
           <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
-            Represented Swinburne Vietnam CS at ExDays and Conception Day. We
-            participated in FPT ResFes 2024 and Akathon Jan 2024
+            {t('swinburne_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
@@ -118,15 +118,14 @@ export function About() {
       ),
     },
     {
-      title: "Early 2025",
+      title: t('early_2025'),
       content: (
         <div>
           <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
-            ITea Lab Community
+            {t('itea_lab_community')}
           </p>
           <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
-            Re-branded as CS community. Organised workshops and began recruiting
-            Gen 2
+            {t('community_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
@@ -162,15 +161,14 @@ export function About() {
       ),
     },
     {
-      title: "Present",
+      title: t('present'),
       content: (
         <div>
           <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
-            Future Roadmap
+            {t('future_roadmap')}
           </p>
           <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
-            Become semi-independent, collaborating with outside firms while
-            representing CS students at Swinburne Vietnam
+            {t('future_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <img
@@ -226,12 +224,10 @@ export function About() {
             <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 dark:text-white text-black" />
 
             <h2 className="font-michroma text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white pl-3 sm:pl-4 py-1 bg-gradient-to-r from-dark-green to-light-green max-w-4xl font-bold">
-              About US
+              {t('about_us')}
             </h2>
             <p className="text-neutral-700 dark:text-background-light text-sm sm:text-base md:text-lg p-3 sm:p-4 leading-relaxed">
-              ITea Lab is a community built from a group of Computer Science
-              students at Swinburne Vietnam, dedicated to cutting-edge research
-              and development in technology.
+              {t('about_description_long')}
             </p>
           </motion.div>
 
@@ -249,13 +245,10 @@ export function About() {
             <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 dark:text-white text-black" />
 
             <h2 className="font-michroma text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white pl-3 sm:pl-4 py-1 bg-gradient-to-r from-dark-green to-light-green max-w-4xl font-bold">
-              Our VISION
+              {t('our_vision')}
             </h2>
             <p className="text-neutral-700 dark:text-background-light text-sm sm:text-base md:text-lg p-3 sm:p-4 leading-relaxed">
-              To further expand the community and cultivate an inclusive space
-              where Computer Science students can explore, research, and
-              exchange knowledge, fostering connections among curious and
-              passionate CS minds across all boundaries.
+              {t('vision_description')}
             </p>
           </motion.div>
         </div>

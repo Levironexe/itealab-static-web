@@ -31,3 +31,13 @@ body {
   color: var(--foreground);
   font-family:  var(--font-ubuntu), Arial, sans-serif;
 }
+
+/* Hide default cursor globally */
+* {
+  cursor: none !important;
+}
+
+/* Ensure all interactive elements also hide cursor */
+a, button, input, textarea, select, [role="button"], [tabindex] {
+  cursor: none !important;
+}

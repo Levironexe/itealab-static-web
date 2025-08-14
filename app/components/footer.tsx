@@ -1,8 +1,12 @@
+"use client";
 import React from "react";
+
 import Link from "next/link";
 import { Github, Facebook, Linkedin, Mail } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   return (
     <footer className="w-full bg-background text-background-light relative overflow-hidden">
       {/* Main Footer Content */}
@@ -12,11 +16,10 @@ const Footer = () => {
           {/* Left section - Brand Message */}
           <div className="sm:col-span-2 lg:col-span-1">
             <h2 className="text-xl sm:text-2xl lg:text-2xl xl:text-3xl font-bold text-light-green leading-tight mb-4 sm:mb-6">
-              We build digital solutions that help communities navigate the tech
-              landscape
+              {t('footer_message')}
             </h2>
             <div className="space-y-2">
-              <p className="font-medium text-sm sm:text-base">More information:</p>
+              <p className="font-medium text-sm sm:text-base">{t('more_information')}</p>
               <Link
                 href="mailto:contact.itealab@gmail.com"
                 className="underline hover:text-[#74A173] transition-colors text-sm sm:text-base"
@@ -29,38 +32,38 @@ const Footer = () => {
           {/* Solutions Column */}
           <div className="lg:col-span-1">
             <h3 className="text-lg sm:text-xl font-bold text-light-green mb-4 sm:mb-6">
-              Solutions
+              {t('solutions')}
             </h3>
             <div className="space-y-3 sm:space-y-4">
               <Link
                 href="#web-development"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Web Development
+                {t('web_development')}
               </Link>
               <Link
                 href="#mobile-apps"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Mobile Apps
+                {t('mobile_apps')}
               </Link>
               <Link
                 href="#cloud-computing"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Cloud Computing
+                {t('cloud_computing')}
               </Link>
               <Link
                 href="#data-science"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Data Science
+                {t('data_science')}
               </Link>
               <Link
                 href="#devops"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                DevOps
+                {t('devops')}
               </Link>
             </div>
           </div>
@@ -68,87 +71,87 @@ const Footer = () => {
           {/* Ecosystem Column */}
           <div className="lg:col-span-1">
             <h3 className="text-lg sm:text-xl font-bold text-light-green mb-4 sm:mb-6">
-              Ecosystem
+              {t('ecosystem')}
             </h3>
             <div className="space-y-3 sm:space-y-4">
               <Link
                 href="#about"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Our Community
+                {t('our_community')}
               </Link>
               <Link
                 href="#news"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Events
+                {t('events')}
               </Link>
               <Link
                 href="#workstyle"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Tech Dive 2025
+                {t('tech_dive_2025')}
               </Link>
               <Link
                 href="#community"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Vietnam Projects
+                {t('vietnam_projects')}
               </Link>
               <Link
                 href="#workshops"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Academy
+                {t('academy')}
               </Link>
             </div>
           </div>
 
           {/* Company Column */}
           <div className="lg:col-span-1">
-            <h3 className="text-lg sm:text-xl font-bold text-light-green mb-4 sm:mb-6">Company</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-light-green mb-4 sm:mb-6">{t('company')}</h3>
             <div className="space-y-3 sm:space-y-4">
               <Link
                 href="#about"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Documentation
+                {t('documentation')}
               </Link>
               <Link
                 href="#media"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Media Kit
+                {t('media_kit')}
               </Link>
               <Link
                 href="#roadmap"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Roadmap 2025
+                {t('roadmap_2025')}
               </Link>
               <Link
                 href="#brochure"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Company Brochure
+                {t('company_brochure')}
               </Link>
               <Link
                 href="#circles"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                ITea Circles
+                {t('itea_circles')}
               </Link>
               <Link
                 href="#team"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Our Team
+                {t('our_team')}
               </Link>
               <Link
                 href="#joinUs"
                 className="block hover:text-[#74A173] transition-colors text-sm sm:text-base"
               >
-                Get Involved
+                {t('get_involved')}
               </Link>
             </div>
           </div>
@@ -192,7 +195,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center pt-6 sm:pt-8 border-t border-gray-200 gap-4 lg:gap-0">
           <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 mb-4 lg:mb-0">
-            <p className="text-sm sm:text-base">Copyright ITea Lab 2025</p>
+            <p className="text-sm sm:text-base">{t('copyright')}</p>
             <div className="flex items-center space-x-2">
               <div className="p-1 bg-background-light rounded-full">
                 <img
@@ -211,13 +214,13 @@ const Footer = () => {
               href="#privacy"
               className="hover:text-[#74A173] transition-colors text-sm sm:text-base"
             >
-              Privacy Policy
+              {t('privacy_policy')}
             </Link>
             <Link
               href="#cookies"
               className="hover:text-[#74A173] transition-colors text-sm sm:text-base"
             >
-              Cookies Policy
+              {t('cookies_policy')}
             </Link>
           </div>
         </div>
