@@ -33,7 +33,7 @@ export default function JoinUs() {
       id="joinus"
       className="bg-background text-background-light px-6 sm:px-8 md:px-10 lg:px-12 py-12 sm:py-16 md:py-20"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 md:px-10 lg:px-12 z-10 relative">
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12">
           
           {/* Left Section */}
@@ -97,7 +97,7 @@ export default function JoinUs() {
                       key={addon}
                       type="button"
                       onClick={() => toggleAddOn(addon)}
-                      className={`px-3 py-1.5 sm:px-4 sm:py-2 border text-xs sm:text-sm md:text-base transition-colors hover:scale-105 ${
+                      className={`px-3 py-1.5 sm:px-4 sm:py-2 border text-xs sm:text-sm md:text-base transition-colors ${
                         selectedAddOns.includes(addon)
                           ? "border-light-green bg-background-light text-black font-medium"
                           : "border-background-light hover:border-light-green"

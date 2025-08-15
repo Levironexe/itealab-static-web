@@ -6,7 +6,6 @@ import {
   motion,
 } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import { Icon } from "./plus-icon";
 
 interface TimelineEntry {
   title: string;
@@ -35,22 +34,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full" ref={containerRef}>
-      <div className="max-w-7xl mx-auto pt-20">
-        <div className="relative border-1 border-white/10 w-3/4">
-          <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
-          <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />
-          <Icon className="absolute h-6 w-6 -top-3 -right-3 text-white" />
-          <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-white" />
-          <h2 className="font-michroma text-lg md:text-3xl bg-gradient-to-r from-dark-green to-light-green pl-4 py-1 font-bold">
-            Our JOURNEY
-          </h2>
-          <p className="text-background-light text-sm sm:text-base md:text-lg p-4">
-            From humble beginnings to a thriving community, explore our journey
-            through the years.
-          </p>
-        </div>
-      </div>
-
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
           <div

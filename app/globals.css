@@ -32,6 +32,10 @@ body {
   font-family:  var(--font-ubuntu), Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hide default cursor globally */
 * {
   cursor: none !important;

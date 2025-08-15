@@ -53,6 +53,7 @@ const translations = {
     'about': 'About',
     'what_we_do': 'What We Do',
     'how_we_work': 'How We Work',
+    'how_our_team_work': 'How Our Team Work',
     'news': 'News',
     'join_us': 'Join Us',
     
@@ -106,6 +107,8 @@ const translations = {
     'present': 'Present',
     'early_2025': 'Early 2025',
     'early_2024': 'Early 2024',
+    'our_journey': 'Our JOURNEY',
+    'journey_description': 'From humble beginnings to a thriving community, explore our journey through the years.',
     
     // How Our Team Works Section
     'how_team_work_title': 'HOW OUR TEAM WORK',
@@ -190,6 +193,7 @@ const translations = {
     'about': 'Giới thiệu',
     'what_we_do': 'Những gì chúng tôi làm',
     'how_we_work': 'Cách chúng tôi làm việc',
+    'how_our_team_work': 'Cách đội ngũ chúng tôi làm việc',
     'news': 'Tin tức',
     'join_us': 'Tham gia với chúng tôi',
     
@@ -243,6 +247,8 @@ const translations = {
     'present': 'Hiện tại',
     'early_2025': 'Đầu năm 2025',
     'early_2024': 'Đầu năm 2024',
+    'our_journey': 'HÀNH TRÌNH CỦA CHÚNG TÔI',
+    'journey_description': 'Từ những khởi đầu khiêm tốn đến một cộng đồng thịnh vượng, khám phá hành trình của chúng tôi qua các năm.',
     
     // How Our Team Works Section
     'how_team_work_title': 'CÁCH ĐỘI NGŨ CHÚNG TÔI LÀM VIỆC',
@@ -327,6 +333,7 @@ const translations = {
     'about': '私たちについて',
     'what_we_do': '私たちの取り組み',
     'how_we_work': '私たちの働き方',
+    'how_our_team_work': '私たちのチームの働き方',
     'news': 'ニュース',
     'join_us': '参加する',
     
@@ -380,6 +387,8 @@ const translations = {
     'present': '現在',
     'early_2025': '2025年初頭',
     'early_2024': '2024年初頭',
+    'our_journey': '私たちの旅路',
+    'journey_description': 'ささやかな始まりから繁栄するコミュニティまで、私たちの長年の旅路を探求してください。',
     
     // How Our Team Works Section
     'how_team_work_title': '私たちのチームの働き方',

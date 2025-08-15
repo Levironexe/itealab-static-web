@@ -12,7 +12,8 @@ import {
   IconNetwork,
   IconItalic,
   IconNews,
-  IconBrandLinkedin
+  IconBrandLinkedin,
+  IconGitFork,
 } from "@tabler/icons-react";
 
 export function Navbar() { 
@@ -46,7 +47,16 @@ export function Navbar() {
       icon: (
         <IconNetwork className="h-full w-full text-neutral-300" />
       ),
-      href: "#community",
+      href: "#what-we-do",
+
+      target: "_self",
+    },    
+    {
+      title: t('how_our_team_work'),
+      icon: (
+        <IconGitFork className="h-full w-full text-neutral-300" />
+      ),
+      href: "#how-our-team-work",
 
       target: "_self",
     },

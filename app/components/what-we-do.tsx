@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import { ShapeIcon } from "./ui/shapeicon";
 import { Icon } from "./ui/plus-icon";
 import ImageSlider from "./ui/image-slider";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -15,24 +15,27 @@ const Community = () => {
       url: "https://twitter.com/mannupaaji",
       image: "/images/git_github_workshop.png",
       alt: "Git GitHub Workshop",
+      shape: "icosahedron",
     },
     {
       name: t('amazon_q_workshop'),
       url: "https://twitter.com/mannupaaji",
       image: "/images/amazon_q_workshop.jpg",
       alt: "Amazon Q Workshop",
+      shape: "square",
     },
     {
       name: t('docker_workshop'),
       url: "https://twitter.com/mannupaaji",
       image: "/images/docker_workshop.png",
       alt: "Docker Workshop",
+      shape: "octahedron",
     },
   ];
 
   return (
     <div
-      id="community"
+      id="what-we-do"
       className="bg-background-light w-full text-black py-16 sm:py-20 md:py-24 lg:py-32 relative"
     >
       <div
@@ -79,8 +82,8 @@ const Community = () => {
               
 
               {/* Share Icon - Hidden by default, shows on hover */}
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 z-20 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 ease-out">
-                <ArrowUpRight className="h-5 w-5 sm:h-8 sm:w-8 group-hover:text-background text-background-light" />
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-4 transition-all duration-300 ease-out -ml-6 sm:-ml-8 md:-ml-10 lg:-ml-12">
+                <ShapeIcon shape={workshop.shape} className="h-16 w-16 sm:h-32 sm:w-32" />
               </div>
 
               <a

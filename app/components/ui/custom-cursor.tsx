@@ -11,7 +11,7 @@ const CustomCursor = () => {
     const animationRef = useRef<number | null>(null);
     
     // Smoothing factor - lower = more delay/smoothness (0.1 = very smooth, 0.5 = less smooth)
-    const smoothingFactor = 0.15;
+    const smoothingFactor = 0.35;
 
     // Define selectors for different types
     const linkSelectors = 'a[href]';
