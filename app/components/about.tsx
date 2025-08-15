@@ -16,7 +16,7 @@ export function About() {
           <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold">
             {t('conception')}
           </p>
-          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
+          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-200">
             {t('conception_desc')}
           </p>
           <div className="grid grid-cols-1 gap-4">
@@ -35,10 +35,10 @@ export function About() {
       title: t('early_2024'),
       content: (
         <div>
-          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
+          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-200">
             {t('it_student_association')}
           </p>
-          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
+          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-200">
             {t('it_student_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -78,10 +78,10 @@ export function About() {
       title: "2024",
       content: (
         <div>
-          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
+          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-200">
             {t('swinburne_it_lab')}
           </p>
-          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
+          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-200">
             {t('swinburne_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -121,10 +121,10 @@ export function About() {
       title: t('early_2025'),
       content: (
         <div>
-          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
+          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-200">
             {t('itea_lab_community')}
           </p>
-          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
+          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-200">
             {t('community_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -164,10 +164,10 @@ export function About() {
       title: t('present'),
       content: (
         <div>
-          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-800 dark:text-neutral-200">
+          <p className="mb-4 text-lg sm:text-xl md:text-2xl lg:text-4xl font-bold text-neutral-200">
             {t('future_roadmap')}
           </p>
-          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-800 dark:text-neutral-200">
+          <p className="mb-6 sm:mb-8 text-xs sm:text-sm md:text-base font-normal text-neutral-200">
             {t('future_desc')}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -218,15 +218,15 @@ export function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           >
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 dark:text-white text-black" />
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 dark:text-white text-black" />
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 dark:text-white text-black" />
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 dark:text-white text-black" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 text-white" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 text-white" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 text-white" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 text-white" />
 
             <h2 className="font-michroma text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white pl-3 sm:pl-4 py-1 bg-gradient-to-r from-dark-green to-light-green max-w-4xl font-bold">
               {t('about_us')}
             </h2>
-            <p className="text-neutral-700 dark:text-background-light text-sm sm:text-base md:text-lg p-3 sm:p-4 leading-relaxed">
+            <p className="text-background-light text-sm sm:text-base md:text-lg p-3 sm:p-4 leading-relaxed">
               {t('about_description_long')}
             </p>
           </motion.div>
@@ -239,15 +239,15 @@ export function About() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
           >
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 dark:text-white text-black" />
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 dark:text-white text-black" />
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 dark:text-white text-black" />
-            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 dark:text-white text-black" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 text-white" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 text-white" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 text-white" />
+            <Icon className="absolute h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 text-white" />
 
             <h2 className="font-michroma text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white pl-3 sm:pl-4 py-1 bg-gradient-to-r from-dark-green to-light-green max-w-4xl font-bold">
               {t('our_vision')}
             </h2>
-            <p className="text-neutral-700 dark:text-background-light text-sm sm:text-base md:text-lg p-3 sm:p-4 leading-relaxed">
+            <p className="text-background-light text-sm sm:text-base md:text-lg p-3 sm:p-4 leading-relaxed">
               {t('vision_description')}
             </p>
           </motion.div>

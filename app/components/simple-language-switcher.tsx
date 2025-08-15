@@ -24,7 +24,7 @@ export default function SimpleLanguageSwitcher() {
   return (
     <button
       onClick={handleClick}
-      className="h-10 w-10 rounded-full bg-gray-50 dark:bg-neutral-900  text-[10px] font-bold text-neutral-500 dark:text-neutral-300 hover:text-neutral-700 dark:hover:text-neutral-100 transition-colors duration-200 cursor-pointer"
+      className="h-10 w-10 rounded-full bg-neutral-900  text-[10px] font-bold text-neutral-300 hover:text-neutral-100 transition-colors duration-200 cursor-pointer"
       title={`Switch language (${currentLabel})`}
     >
       {currentLabel}

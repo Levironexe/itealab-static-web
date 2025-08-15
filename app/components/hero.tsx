@@ -223,7 +223,7 @@ export default function Hero() {
               delay: 0,
             }}
           >
-            <Icon className="dark:text-white text-black w-full h-full" />
+            <Icon className="text-white w-full h-full" />
           </motion.div>
 
           <motion.div
@@ -237,7 +237,7 @@ export default function Hero() {
               delay: 0.75,
             }}
           >
-            <Icon className="dark:text-white text-black w-full h-full" />
+            <Icon className="text-white w-full h-full" />
           </motion.div>
 
           <motion.div
@@ -251,7 +251,7 @@ export default function Hero() {
               delay: 1.5,
             }}
           >
-            <Icon className="dark:text-white text-black w-full h-full" />
+            <Icon className="text-white w-full h-full" />
           </motion.div>
 
           <motion.div
@@ -265,7 +265,7 @@ export default function Hero() {
               delay: 2.25,
             }}
           >
-            <Icon className="dark:text-white text-black w-full h-full" />
+            <Icon className="text-white w-full h-full" />
           </motion.div>
 
           <h1 className="text-6xl sm:text-8xl md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[240px] font-michroma font-bold text-light-green leading-none break-words">
