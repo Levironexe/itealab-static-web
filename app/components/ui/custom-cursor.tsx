@@ -64,7 +64,7 @@ const CustomCursor = () => {
     }, [mousePosition, smoothingFactor]);
   return (
     <div 
-      className="fixed pointer-events-none z-50"
+      className="fixed pointer-events-none z-50 hidden md:block"
       style={{
         left: cursorPosition.x,
         top: cursorPosition.y,
