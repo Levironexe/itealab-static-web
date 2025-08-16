@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-
+import Image from "next/image";
 import Link from "next/link";
 import { Github, Facebook, Linkedin, Mail } from "lucide-react";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -198,7 +198,7 @@ const Footer = () => {
             <p className="text-sm sm:text-base">{t('copyright')}</p>
             <div className="flex items-center space-x-2">
               <div className="p-1 bg-background-light rounded-full">
-                <img
+                <Image
                   src="/images/icon_transparent.png"
                   width={24}
                   height={24}

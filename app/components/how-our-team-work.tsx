@@ -102,7 +102,7 @@ export default function HowOurTeamWork() {
       className="bg-background-light w-full text-black py-16 sm:py-20 md:py-24 lg:py-32 relative"
     >
 
-      <img
+      <Image
         src="/images/icon_transparent.png"
         width={800}
         height={800}

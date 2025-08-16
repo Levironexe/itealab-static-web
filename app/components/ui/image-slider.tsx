@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Icon } from "./plus-icon";
 
 const ImageSlider = () => {
@@ -75,9 +76,11 @@ const ImageSlider = () => {
               key={slide.id}
               className="w-full h-full flex-shrink-0 relative"
             >
-              <img
+              <Image
                 src={slide.image}
                 alt={slide.title}
+                width={800}
+                height={400}
                 className="w-full h-full object-cover"
               />
               {/* Text Overlay - Bottom Left */}

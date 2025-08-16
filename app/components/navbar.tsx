@@ -1,5 +1,6 @@
 'use client';
 import React from "react";
+import Image from "next/image";
 import { FloatingDock } from "./ui/floating-dock";
 import SimpleLanguageSwitcher from "./simple-language-switcher";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -23,7 +24,7 @@ export function Navbar() {
     {
       title: t('home'),
       icon: (
-        <img
+        <Image
           src="/images/icon_transparent.png"
           width={30}
           height={30}
