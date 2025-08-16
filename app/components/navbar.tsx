@@ -101,10 +101,8 @@ export function Navbar() {
       <FloatingDock
         items={links}
       />
-      <div className="hidden md:flex h-16 items-end pb-3">
-        <div className="flex items-center justify-center">
-          <SimpleLanguageSwitcher />
-        </div>
+      <div className="flex h-16 items-end">
+        <SimpleLanguageSwitcher />
       </div>
     </div>
   );

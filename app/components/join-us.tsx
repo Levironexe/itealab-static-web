@@ -135,11 +135,6 @@ export default function JoinUs() {
                 </a>
               </div>
             </form>
-
-            {/* Globe Component for Mobile/Tablet */}
-            <div className="lg:hidden mt-8">
-              <Cobe />
-            </div>
           </div>
         </div>
       </div>

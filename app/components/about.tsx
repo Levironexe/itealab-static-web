@@ -210,7 +210,7 @@ export function About() {
     <div id="about" className="relative w-full overflow-clip bg-background">
       <div className="max-w-7xl mx-auto pb-12 sm:pb-16 md:pb-20 pt-16 sm:pt-20 md:pt-24 px-6 sm:px-8 md:px-10 lg:px-12">
         {/* Top section with two cards */}
-        <div className="flex flex-col lg:flex-row justify-start items-start gap-6 sm:gap-8 lg:gap-12 mb-12 sm:mb-16 md:mb-20">
+        <div className="flex flex-col lg:flex-row justify-start items-start gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8 lg:mb-12">
           {/* About US Card */}
           <motion.div
             className="flex-[2] relative border-1 border-white/10 w-full"
@@ -255,7 +255,7 @@ export function About() {
         </div>
 
         {/* Timeline Section */}
-        <div className="max-w-7xl mx-auto pt-20">
+        <div className="max-w-7xl mx-auto pt-0 lg:pt-12 xl:pt-20">
           <div className="relative border-1 border-white/10 w-3/4">
             <Icon className="absolute h-6 w-6 -top-3 -left-3 text-white" />
             <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-white" />

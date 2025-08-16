@@ -182,7 +182,7 @@ export default function Hero() {
           transform: "rotateX(55deg) rotateZ(-45deg)",
           transformStyle: "preserve-3d",
         }}
-        className="text-left relative w-full max-w-6xl"
+        className="text-left relative w-full max-w-6xl hidden md:block"
       >
         {/* Top section with image and text */}
         <div className="relative w-full pb-6 sm:pb-8 md:pb-12 flex justify-start gap-4">
@@ -335,6 +335,101 @@ export default function Hero() {
               {item.text}
             </motion.span>
           ))}
+        </div>
+      </div>
+      <div className="block md:hidden relative">
+              <Image
+                src="/images/icon_transparent.png"
+                alt="Hero Image"
+                fill
+                className="object-cover hidden"
+                style={{ transform: "rotate(45deg)" }}
+              />
+        {/* ITea Lab heading with icons */}
+        <div className="relative my-6 sm:my-8 md:my-10">
+          <motion.div
+            className="absolute h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 -top-2 sm:-top-3 -left-2 sm:-left-3"
+            animate={{ rotate: [0, 360, 360] }}
+            transition={{
+              duration: 3, // Total cycle time
+              times: [0, 0.33, 1], // Fast spin for first 1/3, then pause
+              repeat: Infinity,
+              ease: ["easeOut", "linear"],
+              delay: 0,
+            }}
+          >
+            <Icon className="text-white w-full h-full" />
+          </motion.div>
+
+          <motion.div
+            className="absolute h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3"
+            animate={{ rotate: [0, 360, 360] }}
+            transition={{
+              duration: 3,
+              times: [0, 0.33, 1],
+              repeat: Infinity,
+              ease: ["easeOut", "linear"],
+              delay: 0.75,
+            }}
+          >
+            <Icon className="text-white w-full h-full" />
+          </motion.div>
+
+          <motion.div
+            className="absolute h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 -top-2 sm:-top-3 -right-2 sm:-right-3"
+            animate={{ rotate: [0, 360, 360] }}
+            transition={{
+              duration: 3,
+              times: [0, 0.33, 1],
+              repeat: Infinity,
+              ease: ["easeOut", "linear"],
+              delay: 1.5,
+            }}
+          >
+            <Icon className="text-white w-full h-full" />
+          </motion.div>
+
+          <motion.div
+            className="absolute h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3"
+            animate={{ rotate: [0, 360, 360] }}
+            transition={{
+              duration: 3,
+              times: [0, 0.33, 1],
+              repeat: Infinity,
+              ease: ["easeOut", "linear"],
+              delay: 2.25,
+            }}
+          >
+            <Icon className="text-white w-full h-full" />
+          </motion.div>
+
+          <h1 className="text-6xl sm:text-8xl md:text-[120px] lg:text-[160px] xl:text-[200px] 2xl:text-[240px] font-michroma font-bold text-light-green leading-none break-words">
+            ITea Lab
+          </h1>
+        </div>
+
+        {/* Bottom section with tagline and logo */}
+        <div className="relative w-full flex flex-col sm:flex-row items-start sm:items-end justify-end gap-4 sm:gap-6">
+            <p className="relative text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold flex-1 text-background-light text-right z-20">
+              Where tech meets its quali-tea
+            </p>
+
+          {/* Logo section */}
+          <div className="relative flex-shrink-0">
+            {/* Blur shadow */}
+            <div className="absolute w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] bg-black blur-lg sm:blur-xl -translate-x-8 sm:-translate-x-12 md:-translate-x-20 translate-y-8 sm:translate-y-12 md:translate-y-20 z-0"></div>
+
+            {/* Main logo container */}
+            <div className="relative p-2 sm:p-3 md:p-4 hover:p-0 duration-300 ease-in-out transition-all bg-white w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] lg:w-[150px] lg:h-[150px] z-20">
+              <Image
+                src="/images/icon_transparent.png"
+                alt="Hero Image"
+                fill
+                className="object-cover"
+                style={{ transform: "rotate(45deg)" }}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
