@@ -13,7 +13,7 @@ export async function GET() {
     const clientIP = ipData.ip;
     
     // Step 2: Get location
-    const locationResponse = await fetch(`http://ip-api.com/json/${clientIP}?fields=status,city,country`);
+    const locationResponse = await fetch(`https://ip-api.com/json/${clientIP}?fields=status,city,country`);
     
     if (!locationResponse.ok) {
       throw new Error(`Location API failed: ${locationResponse.status}`);
