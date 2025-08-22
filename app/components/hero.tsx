@@ -197,6 +197,9 @@ export default function Hero() {
               fill
               className="object-cover"
               style={{ transform: "-rotateZ(45deg)" }}
+               priority // This preloads the image
+              placeholder="blur" // Shows blur while loading
+              blurDataURL="data:image/jpeg;base64,..." // Tiny base64 image
             />
           </div>
 
@@ -299,6 +302,9 @@ export default function Hero() {
                 fill
                 className="object-cover"
                 style={{ transform: "rotate(45deg)" }}
+                priority // This preloads the image
+                placeholder="blur" // Shows blur while loading
+                blurDataURL="data:image/jpeg;base64,..." // Tiny base64 image
               />
             </div>
           </div>
