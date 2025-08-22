@@ -107,7 +107,7 @@ export default function HowOurTeamWork() {
         width={800}
         height={800}
         alt="ITea Lab Logo"
-        className="w-[267px] h-[267px] sm:w-[333px] sm:h-[333px] md:w-[400px] md:h-[400px] lg:w-[467px] lg:h-[467px] xl:w-[533px] xl:h-[533px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 z-10"
+        className="hidden w-[267px] h-[267px] sm:w-[333px] sm:h-[333px] md:w-[400px] md:h-[400px] lg:w-[467px] lg:h-[467px] xl:w-[533px] xl:h-[533px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20 z-10"
       />
       <div
         className="absolute inset-0 z-0 right-0 w-full hidden lg:block"

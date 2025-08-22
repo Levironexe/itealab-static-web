@@ -74,7 +74,7 @@ export function Navbar() {
       icon: (
         <IconBrandLinkedin className="h-full w-full text-neutral-300" />
       ),
-      href: "https://l.facebook.com/l.php?u=https%3A%2F%2Flinkedin.com%2Fin%2Fhttps%253A%252F%252Fwww.linkedin.com%252Fcompany%252Fitea-lab%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExOFdZVkFDOTVUaGQ2UGxoeAEeuE-zGpWRJR7FH18fbeOZX-byu6vaaJiBWzFoZcx30A-sDxk5wBXfL844tSc_aem_5qCIftWIhDUzGbM6lXMoKg&h=AT2gnShYc4e5yqe9p3Vnpvn4K3HRMeHbP_SeJ-hy_mAtLvfNXopF2cx6ELI9gpGyUchd8PEH4hdtdRrUXn2ae_lZBNxGvCHIrhXqFqSYQtdaevZcSZDO6zMIY6iJ7_6sHR-nByFcc1T-QzMPVXBWXxQr1Q",
+      href: 'https://www.linkedin.com/company/itea-lab/',
       target: "_blank",
 
     },

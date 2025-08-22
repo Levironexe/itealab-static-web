@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import Image from "next/image";
 import { ShapeIcon } from "./ui/shapeicon";
@@ -8,25 +8,25 @@ import { useLanguage } from "../contexts/LanguageContext";
 
 const Community = () => {
   const { t } = useLanguage();
-  
+
   const workshops = [
     {
-      name: t('git_github_workshop'),
-      url: "https://twitter.com/mannupaaji",
+      name: t("git_github_workshop"),
+      url: "https://www.facebook.com/share/p/1CLHWddzxK/",
       image: "/images/git_github_workshop.png",
       alt: "Git GitHub Workshop",
       shape: "icosahedron",
     },
     {
-      name: t('amazon_q_workshop'),
-      url: "https://twitter.com/mannupaaji",
+      name: t("amazon_q_workshop"),
+      url: "https://www.facebook.com/share/p/1Yp41xAmBa/",
       image: "/images/amazon_q_workshop.jpg",
       alt: "Amazon Q Workshop",
       shape: "square",
     },
     {
-      name: t('docker_workshop'),
-      url: "https://twitter.com/mannupaaji",
+      name: t("docker_workshop"),
+      url: "https://www.facebook.com/share/p/1FFaPaWyv6/",
       image: "/images/docker_workshop.png",
       alt: "Docker Workshop",
       shape: "octahedron",
@@ -55,10 +55,10 @@ const Community = () => {
             {/* Header and Description */}
             <div className="text-center lg:text-left lg:flex-1 mb-8 lg:mb-0">
               <h1 className="font-michroma mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-gradient-to-r from-dark-green to-light-green bg-clip-text">
-                {t('what_we_do_title')}
+                {t("what_we_do_title")}
               </h1>
               <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-4xl mx-auto lg:mx-0">
-                {t('what_we_do_desc')}
+                {t("what_we_do_desc")}
               </p>
             </div>
 
@@ -71,47 +71,50 @@ const Community = () => {
           {/* Workshops Section */}
           <div className="flex flex-col space-y-6 sm:space-y-8">
             <h2 className="font-michroma text-2xl sm:text-3xl md:text-4xl font-bold text-background text-center lg:text-left">
-              {t('workshops')}
+              {t("workshops")}
             </h2>
 
             {/* Workshop Links */}
-<div className="flex flex-col gap-6 sm:gap-8 lg:justify-start">
-          {workshops.map((workshop, index) => (
-            <div key={index} className="relative group">
-              {/* Corner Icons */}
-              
+            <div className="flex flex-col gap-6 sm:gap-8 lg:justify-start">
+              {workshops.map((workshop, index) => (
+                <div key={index} className="relative group">
+                  {/* Corner Icons */}
 
-              {/* Share Icon - Hidden by default, shows on hover */}
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-4 transition-all duration-300 ease-out -ml-6 sm:-ml-8 md:-ml-10 lg:-ml-12">
-                <ShapeIcon shape={workshop.shape} className="h-16 w-16 sm:h-32 sm:w-32" />
-              </div>
+                  {/* Share Icon - Hidden by default, shows on hover */}
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-4 transition-all duration-300 ease-out -ml-6 sm:-ml-8 md:-ml-10 lg:-ml-12">
+                    <ShapeIcon
+                      shape={workshop.shape}
+                      className="h-16 w-16 sm:h-32 sm:w-32"
+                    />
+                  </div>
 
-              <a
-                href={workshop.url}
-                className="relative z-0 flex items-center p-4 sm:p-6 bg-white/10 backdrop-blur-sm border border-green-800/20 hover:border-green-800/50 hover:bg-background textbackground hover:text-background-light 
+                  <a
+                    href={workshop.url}
+                    target="_blank"
+                    className="relative z-0 flex items-center p-4 sm:p-6 bg-white/10 backdrop-blur-sm border border-green-800/20 hover:border-green-800/50 hover:bg-background/80 textbackground hover:text-background-light 
                 w-full
                 group-hover:ml-16 group-hover:w-[calc(100%-4rem)]
                 transition-all duration-300 ease-out
                 group-hover:animate-none
                 animate-[bounce-return_0.8s_cubic-bezier(0.68,-0.55,0.265,1.55)]"
-              >
-                <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 text-black" />
-              <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 text-black" />
-              <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 text-black" />
-              <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 text-black" />
-                {/* Workshop Name */}
-                <span className="text-lg sm:text-xl font-semibold relative z-10 pr-20 group-hover:pl-8 transition-all duration-300">
-                  {workshop.name}
-                </span>
+                  >
+                    <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 text-black" />
+                    <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 text-black" />
+                    <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 text-black" />
+                    <Icon className="absolute z-10 h-4 w-4 sm:h-5 sm:w-5 md:h-6 md:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 text-black" />
+                    {/* Workshop Name */}
+                    <span className="text-lg sm:text-xl font-semibold relative z-10 pr-20 group-hover:pl-8 transition-all duration-300">
+                      {workshop.name}
+                    </span>
 
-                {/* Workshop Image - Absolute positioned to right border
+                    {/* Workshop Image - Absolute positioned to right border
                 <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 overflow-hidden">
                   <Image src={workshop.image || "/placeholder.svg"} alt={workshop.alt} fill className="object-cover" />
                 </div> */}
-              </a>
+                  </a>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
           </div>
         </div>
       </div>

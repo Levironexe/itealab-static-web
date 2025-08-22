@@ -8,30 +8,22 @@ const ImageSlider = () => {
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=400&fit=crop",
+        "/images/itealab_10.JPG",
       title: "Modern Development",
       description: "Building the future with cutting-edge technologies",
     },
     {
       id: 2,
-      image:
-        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop",
+      image: "/images/itealab_12.jpg",
       title: "Team Collaboration",
       description: "Working together to create amazing solutions",
     },
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=400&fit=crop",
+        "/images/itealab_11.JPG",
       title: "Innovation Hub",
       description: "Where creativity meets technology",
-    },
-    {
-      id: 4,
-      image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=400&fit=crop",
-      title: "Digital Solutions",
-      description: "Transforming ideas into reality",
     },
   ];
 
@@ -84,7 +76,7 @@ const ImageSlider = () => {
                 className="w-full h-full object-cover"
               />
               {/* Text Overlay - Bottom Left */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-black/10 bg-opacity-40 flex items-end justify-start">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-black/10 bg-opacity-40 flex items-end justify-start">
                 <div className="text-left text-white p-6 pb-12">
                   <h2 className="text-3xl font-bold mb-3 drop-shadow-lg">
                     {slide.title}

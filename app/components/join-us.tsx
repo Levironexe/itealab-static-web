@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { Cobe } from "./ui/draggable-and-rotate-globe";
+// import { Cobe } from "./ui/draggable-and-rotate-globe";
 import { useLanguage } from "../contexts/LanguageContext";
-
+import ItealabLogo from "./ui/itealab-logo";
 export default function JoinUs() {
   const { t } = useLanguage();
   const [selectedAddOns, setSelectedAddOns] = useState<string[]>([]);
@@ -37,7 +37,7 @@ export default function JoinUs() {
         <div className="flex flex-col lg:flex-row gap-8 sm:gap-10 lg:gap-12">
           
           {/* Left Section */}
-          <div className="lg:w-1/2 flex flex-col justify-between">
+          <div className="lg:w-1/2 flex flex-col justify-start gap-12">
             <div className="mb-8 lg:mb-12">
               <h1 className="font-michroma text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold mb-4 sm:mb-6 leading-tight">
                 {t('drop_us_line').split(' ').slice(0, 1)}
@@ -51,7 +51,7 @@ export default function JoinUs() {
 
             {/* Globe Component */}
             <div className="hidden lg:block">
-              <Cobe />
+              <ItealabLogo/>
             </div>
           </div>
 
@@ -128,10 +128,10 @@ export default function JoinUs() {
                   {t('or_email_us')}
                 </p>
                 <a
-                  href="mailto:itealab@gmail.com"
+                  href="mailto:contact.itealab@gmail.com"
                   className="font-michroma text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold hover:text-light-green transition-colors underline break-all"
                 >
-                  itealab@gmail.com
+                  contact.itealab@gmail.com
                 </a>
               </div>
             </form>

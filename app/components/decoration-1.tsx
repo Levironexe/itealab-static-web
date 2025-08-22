@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 
 interface TextSliderProps {
   text: string
@@ -42,31 +43,24 @@ const TextSlider = ({ text, fontSize = 80, speed = 20, gap = 10 }: TextSliderPro
           {textInstances.map((item, index) => (
             <span
               key={`row1-${index}`}
-              className="font-bold text-dark-green flex-shrink-0 font-michroma"
+              className="font-bold text-dark-green flex-shrink-0 font-michroma flex items-center"
               style={{
                 fontSize: `${responsiveFontSize.base}px`,
                 marginRight: `${Math.max(gap * 0.4, 4)}px`,
                 lineHeight: "1.2",
-                display: "inline-block",
+                display: "inline-flex",
               }}
             >
               {item}
+              <Image
+                src='/images/icon_transparent.png'
+                alt="itealab watermark"
+                width={responsiveFontSize.base * 1.5}
+                height={responsiveFontSize.base * 1.5}
+                className="ml-4"
+              />
             </span>
-          ))}
-          {/* Duplicate the instances for seamless loop */}
-          {textInstances.map((item, index) => (
-            <span
-              key={`row1-duplicate-${index}`}
-              className="font-bold text-dark-green flex-shrink-0 font-michroma"
-              style={{
-                fontSize: `${responsiveFontSize.base}px`,
-                marginRight: `${Math.max(gap * 0.4, 4)}px`,
-                lineHeight: "1.2",
-                display: "inline-block",
-              }}
-            >
-              {item}
-            </span>
+            
           ))}
         </div>
       </div>
@@ -135,6 +129,7 @@ export default function IteaLabSlider() {
         speed={50}
         gap={20}
       />
+      
     </main>
   )
 }

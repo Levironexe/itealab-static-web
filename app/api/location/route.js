@@ -3,7 +3,7 @@ export async function GET() {
   try {
     
     // Step 1: Get IP
-    const ipResponse = await fetch('https://api.ipify.org?format=json');
+    const ipResponse = await fetch('http://api.ipify.org?format=json');
     
     if (!ipResponse.ok) {
       throw new Error(`IP API failed: ${ipResponse.status}`);
@@ -13,7 +13,7 @@ export async function GET() {
     const clientIP = ipData.ip;
     
     // Step 2: Get location
-    const locationResponse = await fetch(`https://ip-api.com/json/${clientIP}?fields=status,city,country`);
+    const locationResponse = await fetch(`http://ip-api.com/json/${clientIP}?fields=status,city,country`);
     
     if (!locationResponse.ok) {
       throw new Error(`Location API failed: ${locationResponse.status}`);
