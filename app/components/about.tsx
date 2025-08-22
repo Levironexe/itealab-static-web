@@ -87,7 +87,7 @@ export function About() {
           </p>
           <div className="grid grid-cols-1 gap-4">
             <Image
-              src="/images/itealab_4.jpg"
+              src="/images/itealab_4.JPG"
               alt="Conception image"
               width={500}
               height={700}
@@ -138,7 +138,7 @@ export function About() {
           </p>
           <div className="grid grid-cols-1 gap-4">
             <Image
-              src="/images/itealab_3.jpg"
+              src="/images/itealab_3.JPG"
               alt="Conception image"
               width={500}
               height={700}

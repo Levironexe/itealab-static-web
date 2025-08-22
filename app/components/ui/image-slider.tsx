@@ -14,7 +14,7 @@ const ImageSlider = () => {
     },
     {
       id: 2,
-      image: "/images/itealab_12.jpg",
+      image: "/images/itealab_12.JPG",
       title: "Team Collaboration",
       description: "Working together to create amazing solutions",
     },
