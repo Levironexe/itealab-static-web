@@ -20,7 +20,7 @@ export default function HowOurTeamWork() {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] p-4">
           <Image 
-            src="/images/decoration.jpg" 
+            src="/images/decoration_4.png" 
             alt="decoration" 
             width={200} 
             height={200}
@@ -41,7 +41,7 @@ export default function HowOurTeamWork() {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] p-4">
           <Image 
-            src="/images/decoration.jpg" 
+            src="/images/decoration_3.jpg" 
             alt="decoration" 
             width={200} 
             height={200}
@@ -62,7 +62,7 @@ export default function HowOurTeamWork() {
       header: (
         <div className="flex flex-1 w-full h-full min-h-[6rem] p-4">
           <Image 
-            src="/images/decoration.jpg" 
+            src="/images/decoration_2.jpg" 
             alt="decoration" 
             width={200} 
             height={200}

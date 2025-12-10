@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useState, useEffect, useMemo } from "react";
 import { Icon } from "./ui/plus-icon";
 import Image from "next/image";
-import { useUserLocation } from "./hooks/useUserLocation";
 import { useCurrentTime } from "./hooks/useCurrentTime";
 import { useScreenResolution } from "./hooks/useScreenResolution";
 import { useLanguage } from "../contexts/LanguageContext";
@@ -141,7 +140,6 @@ export default function Hero() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const currentTime = useCurrentTime();
   const { resolution } = useScreenResolution();
-  const { city, country, loading } = useUserLocation();
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -171,9 +169,6 @@ export default function Hero() {
         {currentTime.toLocaleTimeString()}
       </div>
       <div className="absolute top-0 right-0 p-4 font-michroma text-[12px] z-30 opacity-50">
-        {city}, {country}
-      </div>
-      <div className="absolute bottom-0 right-0 p-4 font-michroma text-[12px] z-30 opacity-50">
         {resolution}
       </div>
 
@@ -321,7 +316,7 @@ export default function Hero() {
             padding: "20vh 20vw",
           }}
         >
-          {infiniteKeywords.map((item) => (
+          {/* {infiniteKeywords.map((item) => (
             <motion.span
               className={`text-transparent mr-1 sm:mr-2 mb-1 inline-block cursor-default text-xs sm:text-sm md:${item.size}`}
               key={item.id}
@@ -330,17 +325,11 @@ export default function Hero() {
                 textShadow: "none",
                 scale: 1,
               }}
-              whileHover={{
-                color: getRandomColor(),
-                textShadow: "0 0 16px currentColor, 0 0 32px currentColor",
-                scale: 1.1,
-                transition: { duration: 0 },
-              }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+
             >
               {item.text}
             </motion.span>
-          ))}
+          ))} */}
         </div>
       </div>
       <div className="block md:hidden relative">
