@@ -1,35 +1,61 @@
 "use client";
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Newspaper } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Icon } from "./ui/plus-icon";
 import { motion } from "framer-motion";
 import { useLanguage } from "../contexts/LanguageContext";
+import { createClient } from "@supabase/supabase-js";
+
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseAnonKey) {
+  // fail gracefully in the client and avoid leaking secrets
+  console.error("Missing NEXT_PUBLIC_SUPABASE_* env vars");
+}
+const supabase = createClient(supabaseUrl ?? "", supabaseAnonKey ?? "");
+
+interface NewsItem {
+  id?: number;
+  icon: string;
+  image: string;
+  date: string;
+  title: string;
+  url: string;
+  alt: string;
+  created_at?: string;
+  updated_at?: string;
+}
 
 const News = () => {
   const { t } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
+  const [items, setItems] = useState<NewsItem[]>([]);
 
-  const items = [
-    {
-      icon: Newspaper,
-      image: "/images/news1.jpg",
-      date: "April 23, 2025",
-      title: t('news_title_1'),
-      url: "https://www.facebook.com/ITeaLabTeam",
-      alt: "Talent members achievement",
-    },
-    {
-      icon: Newspaper,
-      image: "/images/news2.jpg",
-      date: "April 19, 2025",
-      title: t('news_title_2'),
-      alt: "Partnership announcement",
-      url: "https://www.facebook.com/ITeaLabTeam",
-    },
-  ];
+  useEffect(() => {
+    const fetchNews = async () => {
+      const { data, error } = await supabase
+        .from("news")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) {
+        console.error("Error fetching news:", error);
+        return;
+      }
+
+      if (!Array.isArray(data)) {
+        console.error("Unexpected news response:", data);
+        return;
+      }
+
+      setItems(data as NewsItem[]);
+    };
+
+    fetchNews();
+  }, []);
 
   return (
     <div
@@ -38,7 +64,7 @@ const News = () => {
     >
       <div className="max-w-7xl mx-auto z-10 relative">
         {/* Header Section with animation */}
-        <motion.div 
+        <motion.div
           className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -46,32 +72,33 @@ const News = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h1 className="font-michroma mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl font-bold">
-            {t('itea_lab_news')}
+            {t("itea_lab_news")}
           </h1>
           <p className="text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
-            {t('news_subtitle')}
+            {t("news_subtitle")}
           </p>
         </motion.div>
 
         {/* News Cards Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 max-w-6xl mx-auto">
           {items.map((item, index) => {
-            const ItemIcon = item.icon;
+            // map icon name to component (fallback to Newspaper)
+            const ItemIcon = item.icon === "Newspaper" ? Newspaper : Newspaper;
 
             return (
               <motion.div
-                key={index}
+                key={item.id ?? index}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ 
-                  duration: 0.6, 
-                  ease: "easeOut", 
-                  delay: index * 0.2 // Stagger animation
+                transition={{
+                  duration: 0.6,
+                  ease: "easeOut",
+                  delay: index * 0.2,
                 }}
               >
-                <Link 
-                  href={item.url} 
+                <Link
+                  href={item.url}
                   className="group block"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -99,7 +126,7 @@ const News = () => {
                   {/* News Content */}
                   <div>
                     <h3 className="text-lg sm:text-xl md:text-2xl lg:text-[28px] font-bold text-background-light group-hover:text-light-green duration-300 transition-colors ease-in-out mb-2 sm:mb-3 leading-tight">
-                      {item.title}
+                      {t(item.title)}
                     </h3>
                     <p className="font-michroma text-sm sm:text-base text-gray-300">
                       {item.date}

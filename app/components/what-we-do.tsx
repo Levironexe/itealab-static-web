@@ -1,37 +1,53 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ShapeIcon } from "./ui/shapeicon";
 import { Icon } from "./ui/plus-icon";
 import ImageSlider from "./ui/image-slider";
 import { useLanguage } from "../contexts/LanguageContext";
+import { createClient } from "@supabase/supabase-js";
+import Link from "next/link";
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
+if (!supabaseUrl || !supabaseAnonKey) {
+  // fail gracefully in the client and avoid leaking secrets to console
+  console.error("Missing NEXT_PUBLIC_SUPABASE_* env vars");
+}
+const supabase = createClient(supabaseUrl ?? "", supabaseAnonKey ?? "");
+interface workshopItem {
+  id?: number;
+  name: string;
+  url: string;
+  image?: string;
+  alt?: string;
+  shape?: string;
+  created_at?: string;
+  updated_at?: string;
+}
 const Community = () => {
   const { t } = useLanguage();
+  const [workshops, setWorkshops] = useState<workshopItem[]>([]);
 
-  const workshops = [
-    {
-      name: t("git_github_workshop"),
-      url: "https://www.facebook.com/share/p/1CLHWddzxK/",
-      image: "/images/git_github_workshop.png",
-      alt: "Git GitHub Workshop",
-      shape: "icosahedron",
-    },
-    {
-      name: t("amazon_q_workshop"),
-      url: "https://www.facebook.com/share/p/1Yp41xAmBa/",
-      image: "/images/amazon_q_workshop.jpg",
-      alt: "Amazon Q Workshop",
-      shape: "square",
-    },
-    {
-      name: t("docker_workshop"),
-      url: "https://www.facebook.com/share/p/1FFaPaWyv6/",
-      image: "/images/docker_workshop.png",
-      alt: "Docker Workshop",
-      shape: "octahedron",
-    },
-  ];
+  useEffect(() => {
+    const fetchWorkshops = async () => {
+      const { data, error } = await supabase.from("workshops").select("*").order('created_at', { ascending: false });
+
+      if (error) {
+        console.error("Error fetching workshops:", error);
+        return;
+      }
+
+      if (!Array.isArray(data)) {
+        console.error("Unexpected workshops response:", data);
+        return;
+      }
+
+      setWorkshops(data as workshopItem[]);
+    };
+
+    fetchWorkshops();
+  }, []);
 
   return (
     <div
@@ -79,8 +95,6 @@ const Community = () => {
               {workshops.map((workshop, index) => (
                 <div key={index} className="relative group">
                   {/* Corner Icons */}
-
-                  {/* Share Icon - Hidden by default, shows on hover */}
                   <div className="absolute left-0 top-1/2 -translate-y-1/2 z-20 opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-4 transition-all duration-300 ease-out -ml-6 sm:-ml-8 md:-ml-10 lg:-ml-12">
                     <ShapeIcon
                       shape={workshop.shape}
@@ -106,14 +120,10 @@ const Community = () => {
                     <span className="text-lg sm:text-xl font-semibold relative z-10 pr-20 group-hover:pl-8 transition-all duration-300">
                       {workshop.name}
                     </span>
-
-                    {/* Workshop Image - Absolute positioned to right border
-                <div className="absolute top-0 right-0 w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 overflow-hidden">
-                  <Image src={workshop.image || "/placeholder.svg"} alt={workshop.alt} fill className="object-cover" />
-                </div> */}
                   </a>
                 </div>
               ))}
+              <Link href='https://www.facebook.com/' target="_blank" className="hover:text-dark-green duration-200 transition-all text-right">Other workshops</Link>
             </div>
           </div>
         </div>
